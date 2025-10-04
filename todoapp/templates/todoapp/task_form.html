@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="section-1" style="background-image: url('{% static "images/image 1.png" %}');">
+            <div class="text-box">
+                <h1>Shape Every Move.
+                    Start Now.
+                </h1>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="todo-box">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="add-todo">
+                        {{ form.content }}
+                        <button type="submit" class="add-button">
+                            Done
+                        </button>
+                    </div>
+                    <div class="todo-list">
+                        {{ form.is_completed }}
+                        <span class="task-content">{{ form.is_completed.label_tag }}</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

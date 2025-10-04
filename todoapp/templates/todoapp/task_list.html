@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="section-1" style="background-image: url('{% static "images/image 1.png" %}');">
+            <div class="text-box">
+                <h1>Shape Every Move.
+                    Start Now.
+                </h1>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="todo-box">
+                <div class="add-todo">
+                    <a class="add-button" href="{% url 'task-create' %}"><img src="{% static 'images/icons8-add-button-50.png' %}" alt="Add Button"></a>
+                </div>
+                {% for task in tasks %}
+                    <div class="todo-list">
+                        <input type="checkbox" {% if task.is_completed %}checked{% endif %} disabled />
+                        <span class="task-content">{{ task.content }}</span>
+                        <a class="edit-icon" href="{% url 'task-update' pk=task.id %}"><img src="{% static 'images/pencil-fill.svg' %}" alt="edit icon"></i></a>
+                        <a class="delete-icon" href="{% url 'task-delete' pk=task.id %}"><img src="{% static 'images/x.svg' %}" alt="edit icon"></i></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

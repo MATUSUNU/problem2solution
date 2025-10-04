@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="section-1" style="background-image: url('{% static "images/image 1.png" %}');">
+            <div class="text-box">
+                <h1>Shape Every Move.
+                    Start Now.
+                </h1>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="todo-box">
+                <div class="add-todo">
+                    <input type="text" placeholder="Your tasks" />
+                    <a class="add-button" href="#"><img src="{% static 'images/icons8-add-button-50.png' %}" alt="Add Button"></a>
+                </div>
+                <div class="todo-list">
+                    <input type="checkbox" />
+                    <span class="task-content">Complete online JavaScript course</span>
+                    <a class="edit-icon" href="#"><img src="{% static 'images/pencil-fill.svg' %}" alt="edit icon"></i></a>
+                    <a class="delete-icon" href="#"><img src="{% static 'images/x.svg' %}" alt="edit icon"></i></a>
+                </div>
+                <div class="todo-list">
+                    <input type="checkbox" checked />
+                    <span class="task-content"><s>Complete online JavaScript course</s></span>
+                    <a class="edit-icon" href="#"><img src="{% static 'images/pencil-fill.svg' %}" alt="edit icon"></i></a>
+                    <a class="delete-icon" href="#"><img src="{% static 'images/x.svg' %}" alt="edit icon"></i></a>
+                </div>
+                <div class="todo-list">
+                    <input type="checkbox" />
+                    <span class="task-content">Complete online JavaScript course</span>
+                    <a class="edit-icon" href="#"><img src="{% static 'images/pencil-fill.svg' %}" alt="edit icon"></i></a>
+                    <a class="delete-icon" href="#"><img src="{% static 'images/x.svg' %}" alt="edit icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

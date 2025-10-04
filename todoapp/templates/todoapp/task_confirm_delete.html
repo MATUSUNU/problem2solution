@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="section-1" style="background-image: url('{% static "images/image 1.png" %}');">
+            <div class="text-box">
+                <h1>Shape Every Move.
+                    Start Now.
+                </h1>
+            </div>
+        </div>
+
+        <div class="section-2">
+            <div class="todo-box">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="add-todo">
+                        <span class="task-content">Are you sure you want to delete this task: "{{ task.content }}"?</span>
+                        <button type="submit" class="add-button">
+                            Delete
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
