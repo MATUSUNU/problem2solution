@@ -22,7 +22,7 @@
                         <!-- When Django needs to turn an object into text, it calls Python’s str(task). -->
                          <!-- That in turn calls your model’s __str__ method. -->
                         <!-- <span class="task-content">{{ task }}</span> -->
-                         <span class="task-content">{{ task.short_content }}</span>
+                         <span class="task-content"><a href="{% url 'task-detail' pk=task.id %}" class="task-content">{{ task.short_content }}</a></span>
                         <a class="edit-icon" href="{% url 'task-update' pk=task.id %}"><img src="{% static 'images/pencil-fill.svg' %}" alt="edit icon"></i></a>
                         <a class="delete-icon" href="{% url 'task-delete' pk=task.id %}"><img src="{% static 'images/x.svg' %}" alt="edit icon"></i></a>
                     </div>

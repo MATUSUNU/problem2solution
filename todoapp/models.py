@@ -12,7 +12,7 @@ class Task(models.Model):
 
     @property
     def short_content(self):
-        return self.content[:25] + ("..." if len(self.content) > 15 else "")
+        return self.content[:25] + ("..." if len(self.content) > 25 else "")
 
     class Meta:
         ordering = ["-updatedAt"]

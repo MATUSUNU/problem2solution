@@ -70,12 +70,14 @@
     font-size: 24px;
     font-family: "Space Mono", monospace;
     color: white;
+    text-decoration: none;
 }
 
 .add-todo .task-content {
     font-size: 24px;
     font-family: "Space Mono", monospace;
     color: white;
+    text-decoration: none;
 }
 
 .todo-list .edit-icon {
