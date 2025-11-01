@@ -10,6 +10,10 @@ class Task(models.Model):
     def __str__(self):
         return self.content[:15] + ("..." if len(self.content) > 15 else "")
 
+    @property
+    def short_content(self):
+        return self.content[:25] + ("..." if len(self.content) > 15 else "")
+
     class Meta:
         ordering = ["-updatedAt"]
         verbose_name = "Task"

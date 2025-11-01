@@ -21,6 +21,11 @@ class TaskCreateView(CreateView):
     template_name = "todoapp/task_form.html"
     success_url = "/"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_create"] = True   # flag for template
+        return context
+
 
 class TaskUpdateView(UpdateView):
     model = Task

@@ -3,7 +3,7 @@
 {% block content %}
 <section>
     <div class="container">
-        <div class="section-1" style="background-image: url('{% static "images/image 1.png" %}');">
+        <div class="section-1" style="background-image: url('{% static "images/person_with_task.png" %}');">
             <div class="text-box">
                 <h1>Shape Every Move.
                     Start Now.
@@ -21,10 +21,12 @@
                             Done
                         </button>
                     </div>
-                    <div class="todo-list">
-                        {{ form.is_completed }}
-                        <span class="task-content">{{ form.is_completed.label_tag }}</span>
-                    </div>
+                    {% if not is_create %}
+                        <div class="todo-list">
+                            {{ form.is_completed }}
+                            <span class="task-content">{{ form.is_completed.label_tag }}</span>
+                        </div>
+                    {% endif %}
                 </form>
             </div>
         </div>
