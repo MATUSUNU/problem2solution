@@ -1,0 +1,7 @@
+task [icon: azure-backlog, color: blue] {
+  id string pk
+  content string
+  isCompleted BooleanField default false
+  createdAt timestamp default now
+  updatedAt timestamp
+}
